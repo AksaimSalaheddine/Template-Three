@@ -2,6 +2,8 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body {
   font-family: "Cairo", sans-serif;
@@ -10,7 +12,7 @@ body {
 :root {
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
-  --main-transition: 0.3s;
+  --main-transition: .3s;
   --main-padding-top: 100px;
   --main-padding-bottom: 100px;
   --section-background: #ececec;
@@ -41,15 +43,80 @@ body {
   }
 }
 /* start header */
+
 header .container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+}
+header .container .logo {
+  color: var(--main-color);
+  font-size: 26px;
+  font-weight: bold;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 header .container ul {
+  display: flex;
   flex: 1;
   justify-content: flex-end;
+  list-style: none;
 }
+header .container ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  position: relative;
+  color: black;
+  padding: 0 30px;
+  overflow: hidden;
+  font-size: 18px;
+  transition: var(--main-transition);
+  text-decoration: none;
+}
+header .container ul a::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+header .container ul a:hover::before {
+  left: 0;
+}
+header .container ul a:hover {
+  background-color: #fafafa;
+  color: var(--main-color);
+}
+
 header .container .hidden {
   display: none;
-} 
+}
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+  }
+  header .container .logo {
+    height: 50px;
+  }
+  header .container ul a {
+    padding: 10px;
+    font-size: 16px;
+    height: 40px;
+  }
+}
+
+
+
+
 /* end header */
