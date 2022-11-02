@@ -12,7 +12,7 @@ body {
 :root {
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
-  --main-transition: .3s;
+  --main-transition: 0.3s;
   --main-padding-top: 100px;
   --main-padding-bottom: 100px;
   --section-background: #ececec;
@@ -43,10 +43,10 @@ body {
   }
 }
 /* start header */
-
 header .container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 header .container .logo {
   color: var(--main-color);
@@ -98,9 +98,32 @@ header .container ul a:hover {
   background-color: #fafafa;
   color: var(--main-color);
 }
-
+header .container .hidden .img {
+  margin-right: 40px;
+}
 header .container .hidden {
-  display: none;
+  /* display: none; */
+  padding: 30px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly
+}
+header .container .hidden .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+header .container .hidden a {
+  display: block;
+  background-color: transparent;
+  padding: 15px;
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: bold;
+  width: calc(90% / 2);
 }
 @media (max-width: 768px) {
   header .container {
@@ -115,8 +138,5 @@ header .container .hidden {
     height: 40px;
   }
 }
-
-
-
 
 /* end header */
