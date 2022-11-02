@@ -64,7 +64,7 @@ header .container ul {
   justify-content: flex-end;
   list-style: none;
 }
-header .container ul a {
+header .container ul > li > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +77,7 @@ header .container ul a {
   transition: var(--main-transition);
   text-decoration: none;
 }
-header .container ul a::before {
+header .container ul > li > a::before {
   content: "";
   width: 100%;
   height: 4px;
@@ -91,39 +91,50 @@ header .container ul a::before {
   -ms-transition: var(--main-transition);
   -o-transition: var(--main-transition);
 }
-header .container ul a:hover::before {
+header .container ul > li > a:hover::before {
   left: 0;
 }
-header .container ul a:hover {
+header .container ul > li > a:hover {
   background-color: #fafafa;
   color: var(--main-color);
 }
 header .container .hidden .img {
   margin-right: 40px;
+  max-width: 100%;
 }
-header .container .hidden {
-  /* display: none; */
+header .container ul li:hover .hidden {
+  display: flex;
+}
+
+header .container ul .hidden {
+  display: none;
   padding: 30px;
   position: absolute;
   top: 100%;
   left: 0;
-  display: flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 4px solid var(--main-color);
 }
 header .container .hidden .links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 0 20px;
 }
 header .container .hidden a {
   display: block;
+  text-decoration: none;
   background-color: transparent;
   padding: 15px;
   color: var(--main-color);
   font-size: 18px;
   font-weight: bold;
-  width: calc(90% / 2);
+  width: calc(50% - 10px);
+  border-bottom: 1px solid #e9e6e6;
+}
+header .container .hidden a:nth-last-child(-n + 2) {
+  border-bottom: none;
 }
 @media (max-width: 768px) {
   header .container {
@@ -137,6 +148,21 @@ header .container .hidden a {
     font-size: 16px;
     height: 40px;
   }
+  header .container .hidden a {
+    width: 100%;
+  }
+  header .container .hidden a:not(:last-of-type) {
+    border-bottom: 1px solid #e9e6e6;
+  }
 }
-
+@media (max-width: 969px) {
+  header .container .img {
+    display: none;
+  }
+}
+@media (max-width: 1199px) {
+  header .container .hidden img {
+    max-width: 350px;
+  }
+}
 /* end header */
