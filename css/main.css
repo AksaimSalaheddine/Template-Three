@@ -295,11 +295,12 @@ header .container .hidden a:nth-last-child(-n + 2) {
 .main-heading h1:hover {
   color: white;
   z-index: 2;
-  transition: 0s .5s;
-  -webkit-transition: 0s .5s;
-  -moz-transition: 0s .5s;
-  -ms-transition: 0s .5s;
-  -o-transition: 0s .5s;
+  border: 2px solid white;
+  transition: .1s .5s;
+  -webkit-transition: .1s .5s;
+  -moz-transition: .1s .5s;
+  -ms-transition: .1s .5s;
+  -o-transition: .1s .5s;
 }
 .main-heading h1::before,
 .main-heading h1::after {
@@ -344,26 +345,26 @@ header .container .hidden a:nth-last-child(-n + 2) {
 @keyframes left-move {
   50% {
     left: 0;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
   }
   100% {
     left: 0;
     border-radius: 0;
-    width: 50%;
+    width: 52%;
     height: 100%;
   }
 }
 @keyframes right-move {
   50% {
     right: 0;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
   }
   100% {
     right: 0;
     border-radius: 0;
-    width: 50%;
+    width: 52%;
     height: 100%;
   }
 }
