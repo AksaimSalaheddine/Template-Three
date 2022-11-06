@@ -424,15 +424,21 @@ header .container .hidden a:nth-last-child(-n + 2) {
 }
 .spikes {
   position: relative;
+  background: #2c3e50;
 }
+
 .spikes::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
-  width: 100%;
-  height: 30px;
-  z-index: 1;
+  left: -0%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 20px;
+  background-size: 30px 100%;
   background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+  background-position: 0 0;
 }
 /* end articles */
 /* satrt gallery */
@@ -464,6 +470,9 @@ header .container .hidden a:nth-last-child(-n + 2) {
   -moz-transform: rotate(4deg) scale(1.1);
   -ms-transform: rotate(4deg) scale(1.1);
   -o-transform: rotate(4deg) scale(1.1);
+}
+.gallery .grid .card .img::after {
+  position: ;
 }
 /* end gallery */
 /* start featuers */
